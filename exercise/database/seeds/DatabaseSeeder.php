@@ -25,12 +25,20 @@ class ContactSeeder extends Seeder
     public function run()
     {
         DB::table('contacts')->delete();
+        DB::table('notes')->delete();
         
         for ($i=0; $i < 10; $i++) { 
           App\Contact::create([
             'name' => $this->randomString(true),
             'phone' => rand(1111111111, 9999999999),
             'email' => $this->randomString(false) . '@' . $this->randomString(false) . '.com'
+          ]);
+        }
+        
+        for ($i=0; $i < 100; $i++) { 
+          App\Notes::create([
+            'note' => $this->randomString(true),
+            'contact_id' => rand(0, 9),
           ]);
         }
     }

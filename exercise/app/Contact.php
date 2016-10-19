@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     public function notes() {
-      return $this->hasMany('Notes');
+      return $this->hasMany('\App\Notes');
     }
 }
