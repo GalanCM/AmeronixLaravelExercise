@@ -78,7 +78,12 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
-
+        
+        'sqlite' => [
+            'driver'   => 'sqlite',
+            'database' => __DIR__.'/../database/database.sqlite',
+            'prefix'   => '',
+        ],
     ],
 
     /*
