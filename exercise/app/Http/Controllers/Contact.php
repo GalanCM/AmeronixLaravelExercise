@@ -29,7 +29,7 @@ class Contact extends Controller
       $contact->phone = $request->phone;
       $contact->email = $request->email;
       
-      $contact->save;
+      $contact->save();
       
       return $contact;
     }
