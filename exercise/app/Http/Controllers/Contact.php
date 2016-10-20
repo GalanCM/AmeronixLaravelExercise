@@ -33,4 +33,21 @@ class Contact extends Controller
       
       return $contact;
     }
+    public function update(Request $request) {
+      $contact = \App\Contact::find($request->id);
+
+      if ( $request->has('name') ) {
+        $contact->name = $request->name;
+      }
+      if ( $request->has('phone') ) {
+      $contact->phone = $request->phone;
+      }
+      if ( $request->has('email') ) {
+        $contact->email = $request->email;
+      }
+      
+      $contact->save();
+      
+      return $contact;
+    }
 }
