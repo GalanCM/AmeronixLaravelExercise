@@ -22,5 +22,15 @@ class Contact extends Controller
       return $output;
     }
     
-    // public function create(Request $)
+    public function store(Request $request) {
+      $contact = new \App\Contact;
+      
+      $contact->name = $request->name;
+      $contact->phone = $request->phone;
+      $contact->email = $request->email;
+      
+      $contact->save;
+      
+      return $contact;
+    }
 }
