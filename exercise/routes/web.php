@@ -18,4 +18,4 @@ Route::get('/', function () {
 Route::get('/contact/{id}', "Contact@show");
 Route::post('/contact', "Contact@store");
 Route::put('/contact/{id}', "Contact@update");
-// Route::delete('/contact/{id}', "Contact@destroy");
+Route::delete('/contact/{id}', "Contact@destroy");

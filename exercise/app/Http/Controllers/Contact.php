@@ -33,6 +33,7 @@ class Contact extends Controller
       
       return $contact;
     }
+    
     public function update(Request $request) {
       $contact = \App\Contact::find($request->id);
 
@@ -49,5 +50,11 @@ class Contact extends Controller
       $contact->save();
       
       return $contact;
+    }
+    
+    public function destroy(Request $request) {
+      \App\Contact::destroy($request->id);
+      
+      return 'Contact #' . $request->id . ' deleted.';
     }
 }
