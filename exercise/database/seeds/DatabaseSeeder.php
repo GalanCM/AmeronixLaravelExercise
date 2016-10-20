@@ -24,8 +24,8 @@ class ContactSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('contacts')->delete();
-        DB::table('notes')->delete();
+        DB::table('contacts')->truncate();
+        DB::table('notes')->truncate();
         
         for ($i=0; $i < 10; $i++) { 
           App\Contact::create([
